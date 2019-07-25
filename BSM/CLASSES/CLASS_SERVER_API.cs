@@ -12,7 +12,7 @@ namespace Borealis
         {
             using (var webClient = new System.Net.WebClient())
             {
-                var json = webClient.DownloadString("http://sfo2.hauteclaire.me:1337/config/" + appID);
+                var json = webClient.DownloadString("https://bsm.hauteclaire.me/" + appID);
                 return JsonConvert.DeserializeObject<GameServerObject>(json);
             }
         }
@@ -24,7 +24,7 @@ namespace Borealis
         {
             using (var webClient = new System.Net.WebClient())
             {
-                var json = webClient.DownloadString("http://sfo2.hauteclaire.me:1337/index");
+                var json = webClient.DownloadString("https://bsm.hauteclaire.me");
                 JObject o = JObject.Parse(json);
 
                 foreach (var serverAppIDLink in o)
